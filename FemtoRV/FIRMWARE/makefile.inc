@@ -34,11 +34,11 @@ ifeq ($(uname),Darwin)
 else
     ifeq ($(uname_m),aarch64)
         $(info Configuring for ARM64)
-        TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-embed-gcc-xpack/releases/download/v10.1.0-1.1
-        TOOLCHAIN_VER=xpack-riscv-none-embed-gcc-10.1.0-1.1
+        TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v12.1.0-2/
+        TOOLCHAIN_VER=xpack-riscv-none-elf-gcc
         TOOLCHAIN_DL_SUFFIX=-linux-arm64
-        TOOLCHAIN_GCC_VER=10.1.0
-        RVTOOLCHAIN_BIN_PREFIX=riscv-none-embed
+        TOOLCHAIN_GCC_VER=12.1.0-2
+        RVTOOLCHAIN_BIN_PREFIX=riscv-none-elf
     else ifeq ($(uname_m),armv7l)
         $(info Configuring for Raspberry Pi)
         TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-embed-gcc-xpack/releases/download/v8.3.0-2.3
