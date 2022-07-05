@@ -1,6 +1,6 @@
 YOSYS_ICESUGAR_NANO_OPT=-DICE_SUGAR_NANO -q -p "synth_ice40 -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
 NEXTPNR_ICESUGAR_NANO_OPT=--force --json $(PROJECTNAME).json --pcf BOARDS/icesugar_nano.pcf --asc $(PROJECTNAME).asc \
-                       --freq 12 --lp1k --package cm36
+                       --freq 36 --lp1k --package cm36
 
 #######################################################################################################################
 
