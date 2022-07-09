@@ -33,14 +33,11 @@ jobs:
      
       - name: oss-cad-suite env
         run: source oss-cad-suite/environment
-      
-      - name: goto FemtoRV
-        run: cd FemtoRv
         
       - name: synthesize icesugar nano
-        run: make ICESUGAR_NANO.synth
+        run: make -C FemtoRV ICESUGAR_NANO.synth
       
       - name: synthesize icesugar
-        run: make ICESUGAR.synth
+        run: make -C FemtoRV ICESUGAR.synth
       
       
