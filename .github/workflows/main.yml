@@ -35,7 +35,7 @@ jobs:
         run: source oss-cad-suite/environment
       
       - name: goto FemtoRV
-        run: cd learn-fpga/FemtoRv
+        run: cd FemtoRv
         
       - name: synthesize icesugar nano
         run: make ICESUGAR_NANO.synth
