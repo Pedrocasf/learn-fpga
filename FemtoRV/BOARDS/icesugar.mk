@@ -1,4 +1,4 @@
-YOSYS_ICESUGAR_OPT=-DICE_SUGAR -q -p "synth_ice40 -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
+YOSYS_ICESUGAR_OPT=-DICE_SUGAR -q -p "synth_ice40 -dsp -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
 NEXTPNR_ICESUGAR_OPT=--force --json $(PROJECTNAME).json --pcf BOARDS/icesugar.pcf --asc $(PROJECTNAME).asc \
                        --freq 12 --up5k --package sg48
 

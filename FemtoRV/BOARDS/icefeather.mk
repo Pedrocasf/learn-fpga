@@ -1,4 +1,4 @@
-YOSYS_ICEFEATHER_OPT=-DICE_FEATHER -q -p "synth_ice40 -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
+YOSYS_ICEFEATHER_OPT=-DICE_FEATHER -q -p "synth_ice40 -dsp -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
 NEXTPNR_ICEFEATHER_OPT=--force --json $(PROJECTNAME).json --pcf BOARDS/icefeather.pcf --asc $(PROJECTNAME).asc \
                        --freq 12 --up5k --package sg48
 

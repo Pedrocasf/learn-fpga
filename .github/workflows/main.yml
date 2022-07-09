@@ -32,12 +32,8 @@ jobs:
         run: tar xzf oss-cad-suite-linux-x64-20220708.tgz
      
       - name: oss-cad-suite env
-        run: source oss-cad-suite/environment
-        
-      - name: synthesize icesugar nano
-        run: make -C FemtoRV ICESUGAR_NANO.synth
-      
-      - name: synthesize icesugar
-        run: make -C FemtoRV ICESUGAR.synth
-      
+        run: |
+          source oss-cad-suite/environment
+          make -C FemtoRV ICESUGAR_NANO.synth
+          make -C FemtoRV ICESUGAR.synth
       
