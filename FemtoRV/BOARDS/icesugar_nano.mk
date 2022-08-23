@@ -1,6 +1,6 @@
 YOSYS_ICESUGAR_NANO_OPT=-DICE_SUGAR_NANO -q -p "synth_ice40 -relut -top $(PROJECTNAME) -json $(PROJECTNAME).json"
 NEXTPNR_ICESUGAR_NANO_OPT=--force --json $(PROJECTNAME).json --pcf BOARDS/icesugar_nano.pcf --asc $(PROJECTNAME).asc \
-                       --freq 12 --lp1k --package cm36
+                       --freq 12 --lp1k --package cm36 --pcf-allow-unconstrained
 
 #######################################################################################################################
 
@@ -18,7 +18,7 @@ ICESUGAR_NANO.show:
 	nextpnr-ice40 $(NEXTPNR_ICESUGAR_NANO_OPT) --gui
 
 ICESUGAR_NANO.prog:
-	icesprog $(PROJECTNAME).bin
+	sudo icesprog $(PROJECTNAME).bin
 
 ICESUGAR_NANO.firmware_config:
 	BOARD=icesugar_nano TOOLS/make_config.sh -DICE_SUGAR_NANO

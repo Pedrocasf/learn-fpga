@@ -34,10 +34,10 @@ ifeq ($(uname),Darwin)
 else
     ifeq ($(uname_m),aarch64)
         $(info Configuring for ARM64)
-        TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v12.1.0-2/
-        TOOLCHAIN_VER=xpack-riscv-none-elf-gcc
+        TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v12.1.0-2
+        TOOLCHAIN_VER=xpack-riscv-none-elf-gcc-12.1.0-2
         TOOLCHAIN_DL_SUFFIX=-linux-arm64
-        TOOLCHAIN_GCC_VER=12.1.0-2
+        TOOLCHAIN_GCC_VER=12.1.0
         RVTOOLCHAIN_BIN_PREFIX=riscv-none-elf
     else ifeq ($(uname_m),armv7l)
         $(info Configuring for Raspberry Pi)
@@ -48,11 +48,11 @@ else
         RVTOOLCHAIN_BIN_PREFIX=riscv-none-embed
     else
         $(info Configuring for Linux x86_64)
-        TOOLCHAIN_WEB=https://static.dev.sifive.com/dev-tools
-        TOOLCHAIN_DL_SUFFIX=-x86_64-linux-ubuntu14
-        TOOLCHAIN_VER=riscv64-unknown-elf-gcc-8.3.0-2020.04.0
-        TOOLCHAIN_GCC_VER=8.3.0
-        RVTOOLCHAIN_BIN_PREFIX=riscv64-unknown-elf
+        TOOLCHAIN_WEB=https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v12.1.0-2
+        TOOLCHAIN_VER=xpack-riscv-none-elf-gcc-12.1.0-2
+		TOOLCHAIN_DL_SUFFIX=-linux-x64
+        TOOLCHAIN_GCC_VER=12.1.0
+        RVTOOLCHAIN_BIN_PREFIX=riscv-none-elf
     endif
 endif
 
@@ -89,7 +89,7 @@ RVINCS=-I$(FIRMWARE_DIR)/LIBFEMTOGL -I$(FIRMWARE_DIR)/LIBFEMTORV32 -I$(FIRMWARE_
 RVCFLAGS=$(OPTIMIZE) $(RVINCS) $(DEVICES) -fno-pic -march=$(ARCH) -mabi=$(ABI) \
          -fno-stack-protector -w -Wl,--no-relax 
         # Note: --no-relax because I'm using gp for fast access to mapped IO.
-RVASFLAGS=-march=$(ARCH) -mabi=$(ABI) $(DEVICES_ASM) $(RVINCS)
+RVASFLAGS= -march=$(ARCH) -mabi=$(ABI) $(DEVICES_ASM) $(RVINCS)
 RVLDFLAGS=-m elf32lriscv -b elf32-littleriscv --no-relax 
 RVCPPFLAGS=-fno-exceptions -fno-enforce-eh-specs
 

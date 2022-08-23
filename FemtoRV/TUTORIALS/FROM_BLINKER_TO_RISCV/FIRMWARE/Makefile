@@ -1,13 +1,13 @@
 include ../../../FIRMWARE/makefile.inc
 RVASFLAGS=-march=$(ARCH) -mabi=$(ABI) 
-RVCFLAGS=-Os -fno-pic -march=$(ARCH) -mabi=$(ABI) -fno-stack-protector -w -Wl,--no-relax 
+RVCFLAGS=-Os -fno-pic -march=$(ARCH) -mabi=$(ABI) -fno-stack-protector -w -Wl, -mno-relax 
 
 RAMSIZE=6144
 
 LIBOBJECTS=putchar.o wait.o print.o memcpy.o errno.o
 
 %.bram.elf: %.o start.o $(LIBOBJECTS) $(RV_BINARIES)
-	$(RVLD) -T bram.ld -m elf32lriscv -nostdlib -norelax $< $(LIBOBJECTS) $(RVTOOLCHAIN_GCC_LIB_DIR)/libgcc.a -o $@
+	$(RVLD) -T bram.ld -m elf32lriscv -nostdlib $< $(LIBOBJECTS) $(RVTOOLCHAIN_GCC_LIB_DIR)/libgcc.a -o $@
 
 
 

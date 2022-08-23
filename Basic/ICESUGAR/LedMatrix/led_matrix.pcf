@@ -1,0 +1,9 @@
+set_io pclk      35
+
+set_io leds_din  18
+set_io leds_cs   19
+set_io leds_clk  20
+
+set_io ledB 39
+set_io ledR 40
+set_io ledG 41

@@ -1,0 +1,14 @@
+set_io pclk      35
+
+set_io oled_DIN  18
+set_io oled_CLK  19
+set_io oled_CS   20
+set_io oled_DC   21
+set_io oled_RST  4
+
+set_io ledB 39
+set_io ledR 40
+set_io ledG 41
+
+set_io TXD 5
+set_io RXD 6

@@ -9,7 +9,7 @@ ICESUGAR: ICESUGAR.firmware_config ICESUGAR.synth ICESUGAR.prog
 ICESUGAR.synth:
 	TOOLS/make_config.sh -DICE_SUGAR
 	yosys $(YOSYS_ICESUGAR_OPT) $(VERILOGS)
-	nextpnr-ice40 $(NEXTPNR_ICESUGAR_OPT)
+	nextpnr-ice40 $(NEXTPNR_ICESUGAR_OPT) --gui
 	icetime -p BOARDS/icesugar.pcf -P sg48 -r $(PROJECTNAME).timings -d up5k -t $(PROJECTNAME).asc
 	icepack -s $(PROJECTNAME).asc $(PROJECTNAME).bin
 
@@ -18,7 +18,7 @@ ICESUGAR.show:
 	nextpnr-ice40 $(NEXTPNR_ICESUGAR_OPT) --gui
 
 ICESUGAR.prog:
-	icesprog $(PROJECTNAME).bin
+	sudo icesprog $(PROJECTNAME).bin
 
 ICESUGAR.firmware_config:
 	BOARD=icesugar TOOLS/make_config.sh -DICE_SUGAR

@@ -1,0 +1,6 @@
+set_io clock 35
+set_io ledB 39
+set_io ledR 40
+set_io ledG 41
+
+

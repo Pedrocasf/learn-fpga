@@ -3,7 +3,7 @@
 
 #include "HardwareConfig_bits.h"
 #include <stdint.h>
-
+#include <stddef.h>
 /* 
  * On the IceStick, code is entirely executed from the (slow) SPI flash,
  * except for functions marked as fastcode that will be loaded in the

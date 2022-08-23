@@ -1,0 +1,7 @@
+set_io pclk      D1
+
+set_io leds_din  A1
+set_io leds_cs   C2
+set_io leds_clk  E3
+
+set_io D5    B6

@@ -1,5 +1,6 @@
-DEVICE=/dev/ttyUSB0   # replace by the terminal used by your device
-BAUDS=1000000
+!#/bin/sh
+DEVICE=/dev/ttyACM0   # replace by the terminal used by your device
+BAUDS=115200
 
 # MINITERM  exit: <ctrl> ]     package: sudo apt-get install python3-serial
 #miniterm --dtr=0 $DEVICE $BAUDS

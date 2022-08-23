@@ -1,0 +1,3 @@
+set_io clock D1
+set_io led5 B6
+

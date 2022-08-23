@@ -14,7 +14,7 @@ char* strncpy(char *dest, const char *src, size_t n);
 int   strcmp(const char *p1, const char *p2);
 size_t strlen(const char* p);
 extern int random();
-*/
+/*
 
 /* Specialized print functions (but one can use printf() instead) */
 extern void print_string(const char* s);
